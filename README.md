@@ -1,6 +1,10 @@
 # oauth2-naver
 extension league/OAuth2-client version by Naver
 
+Composer Install
+
+        composer require tunerprime/oauth2-naver
+
 Example Code
 
         $provider = new TunerPrime\OAuth2\Client\Provider\Naver([

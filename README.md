@@ -3,7 +3,7 @@ extension league/OAuth2-client version by Naver
 
 Example Code
 
-$provider = new TunerPrime\OAuth2\Client\Provider\Naver([
+        $provider = new TunerPrime\OAuth2\Client\Provider\Naver([
             'clientId'     => '{naver-client-id}',
             'clientSecret' => '{naver-client-secret}',
             'redirectUri'  => '{your-redirect-uri}',
@@ -48,3 +48,4 @@ $provider = new TunerPrime\OAuth2\Client\Provider\Naver([
             // Number of seconds until the access token will expire, and need refreshing
             echo $token->getExpires();
         }
+

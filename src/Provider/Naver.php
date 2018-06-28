@@ -7,9 +7,13 @@ use League\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\ResponseInterface;
 
 class Naver extends AbstractProvider{
-	const BASE_NAVER_URL = 'https://nid.naver.com/oauth2.0/';
+	public $version = '';
 	
-	const BASE_NAVER_PROFILE_URL = 'https://openapi.naver.com/v1/nid/me';
+	public $base_naver_url = 'https://nid.naver.com/oauth2.0/';
+	
+	public $base_naver_api_url = 'https://openapi.naver.com/';
+	
+	public $base_naver_profile_url = "/nid/me";
 	
 	public function __construct(array $options = [], array $collaborators = [])
 	{
@@ -17,16 +21,16 @@ class Naver extends AbstractProvider{
 	}
 	
 	public function getBaseAuthorizationUrl(){
-		return static::BASE_NAVER_URL.'authorize';
+		return $this->base_naver_url.'authorize';
 	}
 	
 	public function getBaseAccessTokenUrl(array $params){
-		return static::BASE_NAVER_URL.'token';
+		return $this->base_naver_url.'token';
 	}
 	
 	public function getResourceOwnerDetailsUrl(AccessToken $token)
 	{
-		return static::BASE_NAVER_PROFILE_URL;
+		return $this->base_naver_api_url.$this->version.$this->base_naver_profile_url;
 	}
 	
 	protected function getDefaultScopes()

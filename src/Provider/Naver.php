@@ -13,7 +13,7 @@ class Naver extends AbstractProvider{
 	
 	public $base_naver_api_url = 'https://openapi.naver.com/';
 	
-	public $base_naver_profile_url = "/nid/me";
+	public $base_naver_profile_url = "v1/nid/me";
 	
 	public function __construct(array $options = [], array $collaborators = [])
 	{
